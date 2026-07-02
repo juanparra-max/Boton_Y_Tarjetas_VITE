@@ -1,0 +1,140 @@
+/*Estilos generales*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/*La app entera cambia de color según la clase*/
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Modo claro */
+.app--claro {
+  background-color: #f5f5f5;
+  color: #222222;
+}
+
+/* Modo oscuro */
+.app--oscuro {
+  background-color: #1a1a2e;
+  color: #e0e0e0;
+}
+
+/*Header*/
+.app__header {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+
+/*Forzar que el título del header herede/ajuste su color según el tema */
+.app__titulo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+/*Colores explícitos según tema*/
+.app--claro .app__titulo {
+  color: #1a1a2e;
+}
+
+.app--oscuro .app__titulo {
+  color: #e0e0e0;
+}
+
+.app__boton-tema {
+  padding: 8px 18px;
+  background: transparent; 
+  color: inherit;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.app__boton-tema:hover {
+  background: rgba(128, 128, 128, 0.15);
+}
+
+/* Card component styles */
+.card {
+  width: 100%;
+  max-width: 700px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.9);
+  color: inherit;
+  transition: background 0.3s, color 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card__body {
+  padding: 1rem 1.2rem;
+}
+
+.card__title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.card__desc {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.card__actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.card__btn {
+  padding: 8px 12px;
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Theme-aware card backgrounds */
+.app--claro .card { background: #ffffff; }
+.app--oscuro .card { background: #111224; }
+
+/* Ensure container centers the card */
+main { width: 100%; display:flex; justify-content:center; }
+
+/* Contenedor de cartas: apilado vertical */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+
